@@ -10,12 +10,12 @@ Open `index.html` in a browser, or serve the folder with any static server.
 
 ## Images
 
-The five photos load from `images/`. If a file is missing, the page shows a labeled placeholder in its spot:
+The five photos load from `images/`. If a file is missing, the page shows a labeled placeholder in its spot. All photos are freely licensed:
 
-| File | Used for |
-|---|---|
-| `images/roosevelt-portrait.jpg` | Early Life section |
-| `images/forest-canopy.jpg` | Establishing Protected Lands |
-| `images/park-trees.jpg` | National Wildlife Refuge System |
-| `images/farm-fields.jpg` | Sustainable Resource Management |
-| `images/pine-forest.jpg` | Legacy band background |
+| File | Used for | Source / license |
+|---|---|---|
+| `images/roosevelt-portrait.jpg` | Early Life section | Pach Brothers, via Wikimedia Commons (public domain) |
+| `images/forest-canopy.jpg` | Establishing Protected Lands | Krishna k. sahh, Wikimedia Commons (CC0) |
+| `images/park-trees.jpg` | National Wildlife Refuge System | Rhododendrites, Wikimedia Commons (CC BY-SA 4.0) |
+| `images/farm-fields.jpg` | Sustainable Resource Management | Tim McCabe, USDA NRCS (public domain) |
+| `images/pine-forest.jpg` | Legacy band background | Treefender K, Wikimedia Commons (CC BY 4.0) |
