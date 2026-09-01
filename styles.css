@@ -1,0 +1,444 @@
+/* =============================================================
+   Theodore Roosevelt — America's "Conservation President"
+   Page design after the look of realfood.gov
+   ============================================================= */
+
+:root {
+  --ink:   #110000;
+  --cream: #FDFBEE;
+  --sand:  #F3F0D6;
+  --red1:  #920000;
+  --red2:  #B50000;
+  --red3:  #D50000;
+  --red4:  #FF0101;
+  --flag-red: #BD0C3C;
+
+  --display: "Inter Tight", "Segoe UI", Arial, sans-serif;
+  --body:    "Inter", "Segoe UI", Arial, sans-serif;
+  --mono:    "Geist Mono", Consolas, "SF Mono", monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection { background: var(--red3); color: var(--cream); }
+
+img { max-width: 100%; display: block; }
+
+.mono {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ===== Header strip ===== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(20px, 4vw, 44px);
+  background: var(--cream);
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav { display: flex; gap: clamp(14px, 2.5vw, 30px); flex-wrap: wrap; }
+
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.site-nav a:hover { color: var(--red3); }
+
+/* ===== Thin banner ===== */
+.gov-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 8px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.gov-banner .flag { width: 17px; height: 13px; flex: none; }
+
+/* ===== Hero ===== */
+.hero {
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+  padding: clamp(70px, 10vw, 120px) 24px clamp(80px, 10vw, 130px);
+}
+
+.hero .eyebrow { color: rgba(253, 251, 238, 0.75); margin-bottom: clamp(28px, 5vw, 52px); }
+
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(3rem, 14.2vw, 10.4rem);
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  margin-bottom: clamp(34px, 5vw, 56px);
+}
+
+.hero h1 span { display: block; }
+
+.hero-lede {
+  max-width: 640px;
+  margin: 0 auto clamp(38px, 5vw, 54px);
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  border: 1px solid var(--cream);
+  padding: 15px 30px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover { background: var(--cream); color: var(--ink); }
+
+/* ===== Stats ===== */
+.stats {
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+  padding: clamp(70px, 9vw, 120px) 24px clamp(90px, 11vw, 150px);
+}
+
+.eyebrow-head {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(253, 251, 238, 0.7);
+  margin-bottom: 22px;
+}
+
+.eyebrow-head.dark { color: rgba(17, 0, 0, 0.55); }
+
+.stats-statement {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 4.3rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 36px);
+  flex-wrap: wrap;
+  margin-top: clamp(64px, 8vw, 100px);
+}
+
+.bar-item { width: clamp(120px, 15vw, 168px); }
+
+.bar {
+  height: var(--h);
+  background: var(--bar);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 12px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bars.grown .bar { transform: scaleY(1); }
+
+.bar .num {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(26px, 3.4vw, 44px);
+  line-height: 0.95;
+  color: var(--ink);
+}
+
+.bar-label {
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(253, 251, 238, 0.8);
+  margin-top: 14px;
+}
+
+.bar-label strong { color: var(--cream); }
+
+/* ===== Light sections ===== */
+.section { padding: clamp(80px, 12vw, 150px) 24px; max-width: 1128px; margin: 0 auto; }
+
+.section .eyebrow-head { text-align: center; }
+
+.display-head {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.7rem, 8.5vw, 6.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  text-align: center;
+}
+
+.display-head.giant { font-size: clamp(2.4rem, 10vw, 8.2rem); }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 6vw, 72px);
+  align-items: center;
+  margin-top: clamp(52px, 7vw, 84px);
+}
+
+.copy p { font-size: 17px; margin-bottom: 1.25em; }
+.copy p:last-child { margin-bottom: 0; }
+
+.photo img {
+  width: 100%;
+  aspect-ratio: var(--ar, 4/3);
+  object-fit: cover;
+}
+
+.photo figcaption {
+  font-size: 11px;
+  color: rgba(17, 0, 0, 0.55);
+  margin-top: 10px;
+}
+
+/* placeholder shown until the real image is dropped into images/ */
+.photo.missing img { display: none; }
+
+.photo .ph-box {
+  aspect-ratio: var(--ar, 4/3);
+  background: rgba(17, 0, 0, 0.045);
+  border: 1px dashed rgba(17, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.photo .ph-box .star { font-size: 22px; color: rgba(17, 0, 0, 0.35); }
+
+.photo .ph-box span:last-child {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(17, 0, 0, 0.55);
+}
+
+.pull-quote {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4.4vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  text-align: center;
+  max-width: 920px;
+  margin: clamp(70px, 9vw, 110px) auto 0;
+}
+
+.credit-line { text-align: center; color: rgba(17, 0, 0, 0.45); font-size: 11px; margin-top: 20px; }
+
+/* ===== Accomplishments ===== */
+.acc-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 6vw, 72px);
+  align-items: center;
+  margin-top: clamp(80px, 10vw, 130px);
+}
+
+.acc-block.flip .photo { order: -1; }
+
+.acc-block.wide { display: block; }
+
+.acc-block.wide .acc-text { max-width: 760px; margin: 0 auto; text-align: center; }
+
+.acc-block.wide .fact { text-align: center; }
+
+.acc-block.wide .panorama { margin-top: clamp(36px, 5vw, 56px); }
+
+.acc-text h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 3.6vw, 2.75rem);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 26px;
+}
+
+.acc-text p { font-size: 17px; margin-bottom: 1.25em; }
+
+.fact {
+  font-size: 11.5px;
+  color: rgba(17, 0, 0, 0.65);
+  border-top: 1px solid rgba(17, 0, 0, 0.2);
+  padding-top: 18px;
+  margin-top: 30px;
+  line-height: 1.7;
+}
+
+/* ===== Philosophy (sand band) ===== */
+.philosophy { max-width: none; background: var(--sand); }
+
+.phil-inner { max-width: 1080px; margin: 0 auto; }
+
+.philosophy .display-head { margin-bottom: clamp(56px, 8vw, 96px); }
+
+.phil-row {
+  display: grid;
+  grid-template-columns: minmax(240px, 340px) 1fr;
+  gap: clamp(28px, 5vw, 56px);
+  padding: clamp(40px, 6vw, 60px) 0;
+  border-top: 1px solid rgba(17, 0, 0, 0.18);
+}
+
+.phil-row h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.phil-row p { font-size: 16.5px; margin-bottom: 1.2em; }
+.phil-row p:last-child { margin-bottom: 0; }
+
+/* ===== Legacy band ===== */
+.legacy {
+  background:
+    linear-gradient(rgba(17, 0, 0, 0.82), rgba(17, 0, 0, 0.88)),
+    var(--ink) url("images/pine-forest.jpg") center / cover no-repeat;
+  color: var(--cream);
+  text-align: center;
+  padding: clamp(110px, 16vw, 200px) 24px;
+}
+
+.legacy .eyebrow-head { margin-bottom: 30px; }
+
+.legacy-statement {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 4.4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.legacy-body {
+  max-width: 760px;
+  margin: 38px auto 0;
+  font-size: 17px;
+  color: rgba(253, 251, 238, 0.85);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+  border-top: 1px solid rgba(253, 251, 238, 0.15);
+  padding: clamp(56px, 8vw, 80px) 24px 48px;
+}
+
+.footer-mark {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  letter-spacing: -0.02em;
+}
+
+.footer-mark .star { color: var(--red3); }
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(18px, 3vw, 32px);
+  margin: 30px 0 34px;
+}
+
+.footer-nav a {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(253, 251, 238, 0.85);
+  text-decoration: none;
+}
+.footer-nav a:hover { color: var(--red4); }
+
+.footer-fine { color: rgba(253, 251, 238, 0.45); font-size: 11px; margin-top: 8px; }
+
+/* ===== Scroll reveal ===== */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .bar { transform: scaleY(1); transition: none; }
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 880px) {
+  .two-col, .acc-block { grid-template-columns: 1fr; }
+  .acc-block.flip .photo { order: 0; }
+  .phil-row { grid-template-columns: 1fr; gap: 16px; }
+}
+
+@media (max-width: 560px) {
+  .site-header { flex-direction: column; gap: 12px; }
+  .bar-item { width: 42%; }
+  .bars { align-items: flex-end; row-gap: 40px; }
+}
+
+/* section anchors clear the top comfortably */
+section[id] { scroll-margin-top: 24px; }
