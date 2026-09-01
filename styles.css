@@ -379,6 +379,17 @@ img { max-width: 100%; display: block; }
   color: rgba(253, 251, 238, 0.85);
 }
 
+.apes-note {
+  max-width: 680px;
+  margin: clamp(48px, 7vw, 72px) auto 0;
+  padding-top: clamp(28px, 4vw, 40px);
+  border-top: 1px solid rgba(253, 251, 238, 0.2);
+}
+
+.apes-label { color: rgba(253, 251, 238, 0.6); margin-bottom: 14px; }
+
+.apes-text { font-size: 15.5px; line-height: 1.6; color: rgba(253, 251, 238, 0.85); }
+
 /* ===== Footer ===== */
 .site-footer {
   background: var(--ink);
